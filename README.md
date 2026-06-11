@@ -14,6 +14,7 @@ from initial OS setup to monitoring and security hardening.
 ## 🛠️ Stack
 
 - **OS:** Ubuntu Server 24.04 LTS
+- **Containers:** Docker + Portainer
 - **Monitoring:** Prometheus + Grafana + Node Exporter
 - **Security:** Fail2ban, UFW, SSH key authentication
 - **Access:** SSH hardened, no password login, root disabled
@@ -21,6 +22,7 @@ from initial OS setup to monitoring and security hardening.
 ## ✅ Roadmap
 
 - [x] Ubuntu Server 24.04 installation — full 1TB disk
+- [x] WiFi configuration with netplan
 - [x] SSH hardening — ed25519 key-based auth
 - [x] Disable password authentication
 - [x] Disable root login
@@ -28,8 +30,11 @@ from initial OS setup to monitoring and security hardening.
 - [x] Fail2ban setup
 - [x] Prometheus installation
 - [x] Node Exporter installation
-- [x] Grafana installation and configuration
+- [x] Grafana deployed as Docker container
 - [x] Live monitoring dashboard — CPU, RAM, disk, network
+- [x] Docker installed and configured
+- [x] Portainer deployed — web UI for container management
+- [ ] Docker Compose workflows
 - [ ] Automated backups
 - [ ] Alert rules in Grafana
 - [ ] Static IP configuration
@@ -54,7 +59,8 @@ ASUS Zenbook 16 (Workstation)
 ASUS ROG Strix (Ubuntu Server 24.04)
         ├── Prometheus :9090
         ├── Node Exporter :9100
-        └── Grafana :3000
+        ├── Grafana (Docker) :3000
+        └── Portainer (Docker) :9000
 ```
 
 ## 📚 Key Commands
@@ -74,4 +80,7 @@ sudo systemctl status prometheus
 
 # Check Grafana
 sudo systemctl status grafana-server
+
+# Check running containers
+docker ps
 ```
